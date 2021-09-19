@@ -1,0 +1,10 @@
+@import "./variables";
+.wrapper {
+  display: flex;
+}
+
+@include mobile {
+  .wrapper {
+    flex-direction: column;
+  }
+}

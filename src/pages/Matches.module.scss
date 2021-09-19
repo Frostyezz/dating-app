@@ -1,0 +1,94 @@
+@import "../variables";
+
+.cover {
+  height: 100vh;
+  width: 100%;
+  @include cover();
+  @include flex_center();
+  background-image: url("../assets/svg.svg");
+}
+
+.wrapper {
+  width: 600px;
+  background: white;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 25px;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+
+a {
+  text-decoration: none;
+  width: inherit;
+}
+
+.match {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+  background: $gradient;
+  color: $white;
+  border-radius: 100px;
+  width: 100%;
+  padding: 5px 5px;
+  display: flex;
+  margin: 10px 0px;
+  .img {
+    @include cover();
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+  }
+  .info {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h1 {
+      margin: 0;
+    }
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.btn {
+  margin: 10px 0px;
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: $gradient;
+  color: $white;
+  border: none;
+}
+
+@include loading;
+
+@include mobile {
+  .cover {
+    height: 92.5vh;
+    background-image: url("../assets/svg_mobile.svg");
+  }
+  .wrapper {
+    width: 90vw;
+  }
+  .match {
+    .img {
+      width: 70px;
+      height: 70px;
+    }
+    .info {
+      h1 {
+        font-size: 1.25rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}

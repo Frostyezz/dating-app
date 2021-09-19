@@ -1,0 +1,95 @@
+@import "../variables";
+
+.cover {
+  height: 100vh;
+  width: 100%;
+  @include cover();
+  @include flex_center();
+  background-image: url("../assets/svg.svg");
+}
+
+.wrapper {
+  background: white;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+
+.slider {
+  @include cover();
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 500px;
+  height: 70vh;
+  div:nth-of-type(2) {
+    margin-top: auto;
+    margin-bottom: 30px;
+    i {
+      justify-self: flex-end;
+      color: $pink;
+      padding: 13px 20px;
+      margin: 0px 10px;
+      background-color: white;
+      border-radius: 100%;
+      transition: 0.8s;
+      &:hover {
+        color: white;
+        background-color: $pink;
+      }
+      &::before {
+        vertical-align: middle !important;
+      }
+    }
+  }
+  div:nth-of-type(1) {
+    i {
+      margin: 0px 5px;
+      transition: 1s;
+    }
+    .active {
+      color: $pink;
+    }
+  }
+}
+
+.content {
+  color: $pink;
+  padding: 0px 30px;
+  padding-bottom: 20px;
+  width: fit-content;
+  max-width: 500px;
+  h1 {
+    margin-bottom: 0px;
+  }
+  h3 {
+    margin: 0px 0px;
+    font-weight: 400;
+  }
+  hr {
+    color: $pink;
+  }
+  a {
+    color: $pink;
+  }
+}
+
+@include loading();
+
+@include mobile {
+  .cover {
+    height: 92.5vh;
+    background-image: url("../assets/svg_mobile.svg");
+  }
+  .slider {
+    width: 90vw;
+    height: 500px;
+    div:nth-of-type(2) {
+      i {
+        padding: 7px 14px;
+      }
+    }
+  }
+}

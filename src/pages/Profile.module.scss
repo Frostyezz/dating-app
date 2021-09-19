@@ -1,0 +1,75 @@
+@import "../variables";
+
+.cover {
+  height: 100vh;
+  width: 100%;
+  @include cover();
+  @include flex_center();
+  background-image: url("../assets/svg.svg");
+}
+
+.wrapper {
+  background: white;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  padding: 15px 25px;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+}
+
+.slider {
+  width: 500px;
+  height: 600px;
+  @include flex_center();
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  @include cover();
+  i {
+    align-self: flex-end;
+    margin: 0px 5px;
+    transition: 1s;
+  }
+  .active {
+    color: $pink;
+  }
+}
+
+.content {
+  color: $pink;
+  padding: 0px 30px;
+  width: fit-content;
+  max-width: 500px;
+  h1 {
+    margin-bottom: 0px;
+  }
+  h3 {
+    margin-top: 0px;
+    font-weight: 400;
+  }
+  hr {
+    color: $pink;
+  }
+}
+
+@include mobile {
+  .cover {
+    height: 92.5vh;
+    background-image: url("../assets/svg_mobile.svg");
+  }
+  .wrapper {
+    margin-top: auto;
+    flex-direction: column;
+    padding: 10px 10px;
+  }
+  .slider {
+    width: 350px;
+    height: 500px;
+  }
+  .content {
+    width: 90%;
+    padding: 0px 0px;
+  }
+}
+
+@include loading();

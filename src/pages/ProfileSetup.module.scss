@@ -1,0 +1,165 @@
+@import "../variables";
+.cover {
+  height: 100vh;
+  width: 100%;
+  @include cover();
+  @include flex_center();
+  background-image: url("../assets/svg.svg");
+}
+
+.wrapper {
+  background: white;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  padding: 15px 25px;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+    rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+  h1 {
+    font-size: 2rem;
+    span {
+      color: $pink;
+    }
+  }
+}
+
+.error {
+  background: $pink;
+  color: $white;
+  padding: 10px 15px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.input_group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  input {
+    font-size: 1rem;
+    border: 1px solid black;
+    padding: 10px 15px;
+    margin: 0px 10px;
+  }
+  label {
+    margin: 0px 10px;
+    font-weight: 500;
+  }
+  select {
+    margin: 0px 10px;
+    font-size: 1rem;
+    border: 1px solid black;
+    padding: 10px 15px;
+  }
+  option {
+    font-size: 1rem;
+    border: 1px solid black;
+    padding: 10px 15px;
+  }
+  textarea {
+    border: 1px solid black;
+    margin: 0px 10px;
+    padding: 10px 15px;
+  }
+}
+
+.btn {
+  margin: 10px 0px;
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: $gradient;
+  color: $white;
+  border: none;
+}
+
+.upload_container {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    cursor: pointer;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.upload {
+  margin: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: $pink;
+  padding: 100px 70px;
+}
+
+.img {
+  @include cover();
+  @include flex_center();
+  border-radius: 20px;
+  margin: 10px 10px;
+  width: 176px;
+  height: 255px;
+  i {
+    align-self: center;
+    cursor: pointer;
+    position: relative;
+    bottom: 8px;
+    color: $white;
+  }
+}
+
+@include mobile {
+  .img {
+    width: 136px;
+    height: 195px;
+  }
+
+  .upload {
+    padding: 70px 50px;
+  }
+  .cover {
+    height: 92.5vh;
+    background-image: url("../assets/svg_mobile.svg");
+  }
+  .wrapper {
+    flex-direction: column;
+  }
+  .wrapper h1 {
+    font-size: 1.25rem;
+  }
+  .input_group {
+    input {
+      font-size: 0.8rem;
+      padding: 5px 10px;
+    }
+    label {
+      font-size: 0.8rem;
+    }
+    select {
+      font-size: 0.8rem;
+      padding: 5px 10px;
+    }
+    option {
+      font-size: 0.8rem;
+      padding: 5px 10px;
+    }
+  }
+  .container {
+    flex-direction: column;
+    .input_group:first-of-type {
+      margin-right: 0px;
+    }
+  }
+  .upload_container {
+    margin-left: 0px;
+  }
+}
